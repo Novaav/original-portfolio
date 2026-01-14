@@ -2,9 +2,9 @@ export interface Project {
   id: string;
   title: string;
   image?: string;
-  video?: string;          // optional video
+  video?: string; // optional video
   imageHover?: string;
-  repoUrl?: string;        // optional for UI Demos
+  repoUrl?: string; // optional for UI Demos
   description?: string;
   frameworks?: string[];
   type?: "main" | "ui-demo"; // separate main projects from UI demos
@@ -37,8 +37,8 @@ export const projects: Project[] = [
   {
     id: "realtime-auction",
     title: "Real-Time Auction",
-    image: "/assets/projects/realtime-auction/Landingpage2.png",
-    imageHover: "/assets/projects/realtime-auction/Loginpage.png",
+    image: "/assets/projects/realtime-auction/Landingpage2.png.webp",
+    imageHover: "/assets/projects/realtime-auction/Loginpage.png.webp",
     video: "/assets/projects/realtime-auction/auction.mp4",
     repoUrl: "https://github.com/Novaav/Novaav-fed24-auction",
     description:
@@ -77,8 +77,8 @@ export const projects: Project[] = [
   {
     id: "nova-portfolio",
     title: "Nova Portfolio",
-    image: "/assets/projects/nova-portfolio/Portfoliohero.png",
-    imageHover: "/assets/projects/nova-portfolio/Portfolioabout.png",
+    image: "/assets/projects/nova-portfolio/Portfoliohero.png.webp",
+    imageHover: "/assets/projects/nova-portfolio/Portfolioabout.png.webp",
     repoUrl: "https://github.com/Novaav/original-portfolio",
     description:
       "Personal portfolio showcasing front-end development, animations, and interactive UI components.",
