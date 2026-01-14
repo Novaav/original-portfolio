@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===============================
+   Global base styles
+   =============================== */
+
+html, body, #root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+html {
+  scrollbar-gutter: stable both-edges;
+}
+
+body {
+  overflow-y: scroll;
+  font-family: system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #fff;
+  color: #111;
+}
+
+/* ===============================
+   Layout helpers
+   =============================== */
+
+main {
+  width: 100%;
+  padding: 1.5rem;
+}
+
+/* ===============================
+   Components / utilities
+   =============================== */
+
+.swiper-slide img {
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .hero-padding-left {
+    padding-left: 10rem;
+  }
+}
+
+.home-no-scroll {
+  height: 100vh;
+  overflow: hidden;
+}

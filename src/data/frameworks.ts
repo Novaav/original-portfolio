@@ -1,0 +1,18 @@
+export const frameworks = [
+  "React",
+  "TypeScript",
+  "Tailwind CSS",
+  "Next.js",
+  "Node.js",
+  "Express.js",
+  "SQL / PostgreSQL",
+  "Supabase",
+  "Prisma",
+  "REST APIs",
+  "GraphQL",
+  "React Query",
+  "Cypress",
+  "Responsive Design",
+  "Accessibility",
+  "Jest",
+];
