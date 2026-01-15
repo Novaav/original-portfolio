@@ -61,7 +61,7 @@ export const projects: Project[] = [
     imageHover: "/assets/projects/privacy-analyser/PrivacyAnalyserView.webp",
     repoUrl: "https://github.com/Novaav/privacy-analyser-demo",
     description:
-      "Web app visualising privacy data with clear UI, responsive layout, and reusable components.",
+      "Web app visualising privacy data with clear UI, responsive layout reusable components and AI integration.",
     frameworks: [
       "React",
       "TypeScript",
@@ -71,6 +71,7 @@ export const projects: Project[] = [
       "Zustand",
       "REST API",
       "Responsive Design",
+      "AI integration",
     ],
     type: "main",
   },
