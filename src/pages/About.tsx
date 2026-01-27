@@ -88,9 +88,12 @@ const About: React.FC = () => {
         className="px-6 sm:px-8 md:px-12 pt-20 pb-28 bg-white flex flex-col md:flex-row md:space-x-20 items-start"
       >
         <div className="w-full md:w-1/2 mb-12 md:mb-0">
-          <h1 className="text-[5rem] sm:text-[7rem] md:text-[9rem] font-bold tracking-tight uppercase leading-[1] text-gray-900 flex flex-wrap">
-            <AnimatedText text={whatIDoTitle} type="letters" inView={isWhatInView} />
-          </h1>
+        <div className="w-full flex justify-center">
+  <h1 className="text-[5rem] sm:text-[7rem] md:text-[9rem] font-bold tracking-tight uppercase leading-[1] text-gray-900 whitespace-nowrap">
+    <AnimatedText text={whatIDoTitle} type="letters" inView={isWhatInView} />
+  </h1>
+</div>
+
 
           <p className="text-gray-700 text-base sm:text-xl mt-6 max-w-full md:max-w-xl leading-relaxed font-light">
             <AnimatedText text={whatIDoText} type="words" inView={isWhatInView} />

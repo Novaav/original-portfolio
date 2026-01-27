@@ -25,17 +25,17 @@ const Hero: React.FC = () => {
       className="relative w-full min-h-[70vh] bg-white
                  px-4 md:px-8 pt-4 md:pt-6"
     >
-      {/* TITLE */}
-      <h1 className="text-5xl sm:text-6xl md:text-[8rem] lg:text-[10rem] font-medium uppercase leading-[1] w-full flex mb-3">
-        <AnimatedText
-          text={title}
-          type="letters"
-          timing="hero"
-          inView={isInView}
-          className="flex-1 flex justify-center items-center"
-          letterClassName="flex-1 text-center !mx-0 !px-0"
-        />
-      </h1>
+     <h1 className="text-[clamp(2.5rem,8vw,8rem)] md:text-[8rem] lg:text-[10rem] font-medium uppercase leading-[1] w-full flex mb-3 overflow-visible">
+  <AnimatedText
+    text={title}
+    type="letters"
+    timing="hero"
+    inView={isInView}
+    className="flex-1 flex justify-center items-center"
+    letterClassName="flex-1 text-center !mx-0 !px-0"
+  />
+</h1>
+
 
       {/* MAIN CONTENT */}
       <div className="flex flex-col md:flex-row md:gap-12 items-stretch">

@@ -231,6 +231,17 @@ interface ProjectGridProps {
 const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, onSelect }) => {
   const gridRef = useRef<HTMLDivElement>(null);
   const isInView = useSectionInView(gridRef as React.RefObject<HTMLElement>);
+const [hasAnimated, setHasAnimated] = useState(false);
+
+// mobile check
+const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
+useEffect(() => {
+  if (isInView && !hasAnimated) {
+    setHasAnimated(true);
+  }
+}, [isInView, hasAnimated]);
+
 
   return (
     <motion.div
@@ -245,7 +256,16 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, onSelect }) => {
       "
       variants={containerVariants}
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      animate={
+        isMobile
+          ? hasAnimated
+            ? "visible"
+            : "hidden"
+          : isInView
+          ? "visible"
+          : "hidden"
+      }
+      
     >
       {projects.map((p) => (
         <motion.div key={p.id} variants={itemVariants}>
@@ -282,10 +302,12 @@ const Projects: React.FC = () => {
   );
 
   return (
-    <section className="px-6 md:px-12 py-24 bg-white min-h-screen relative">
+    <section className="px-6 md:px-12 py-16 md:py-25 bg-white min-h-screen relative">
+
       {/* ------------------ MAIN PROJECTS ------------------ */}
       <div className="mb-4">
-        <h2 className="text-6xl font-semibold mb-2 flex flex-wrap">
+      <h2 className="text-4xl md:text-6xl font-semibold mb-2 flex flex-wrap">
+
           <AnimatedText text="My Projects" type="letters" inView />
         </h2>
 
@@ -306,7 +328,8 @@ const Projects: React.FC = () => {
 
       {/* ------------------ UI DEMOS ------------------ */}
       <div className="mt-32 mb-4">
-        <h2 className="text-6xl font-semibold mb-2 flex flex-wrap">
+      <h2 className="text-4xl md:text-6xl font-semibold mb-2 flex flex-wrap">
+
           <AnimatedText text="UI Demos" type="letters" inView />
         </h2>
         <p className="text-lg text-gray-500 max-w-3xl flex flex-wrap">

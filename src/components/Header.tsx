@@ -17,7 +17,7 @@ const Header: React.FC = () => {
     { path: "/about", label: "About" },
   ];
 
-  // Social links
+  // Social links (desktop only)
   const socials = [
     { href: "https://github.com/Novaav", icon: <FaGithub />, label: "GitHub" },
     { href: "https://www.linkedin.com/in/nova-zandkarimi-8b289032b/", icon: <FaLinkedin />, label: "LinkedIn" },
@@ -26,12 +26,12 @@ const Header: React.FC = () => {
 
   return (
     <motion.header
-      className="fixed bottom-6 left-6 right-6 z-50 flex justify-between items-center"
+      className="fixed bottom-6 left-6 right-6 z-50 flex justify-center md:justify-between items-center"
       initial={{ y: 20, opacity: 0 }}
       animate={animateHeader ? { y: 0, opacity: 1 } : {}}
       transition={{ duration: 0.6, delay: 1.8, ease: "easeOut" }}
     >
-      {/* ------------------ NAV LINKS ------------------ */}
+      {/* ------------------ NAV LINKS + MOBILE GITHUB ------------------ */}
       <nav className="flex items-center space-x-4 bg-gray-100/90 text-gray-800 px-3 rounded-full shadow-md backdrop-blur-sm border border-gray-200 h-12">
         {links.map(({ path, label }) => {
           const isActive = location.pathname === path;
@@ -59,10 +59,21 @@ const Header: React.FC = () => {
             </div>
           );
         })}
+
+        {/* Mobile-only GitHub icon */}
+        <a
+          href="https://github.com/Novaav"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          className="text-gray-700 hover:text-black text-lg md:hidden transition-colors"
+        >
+          <FaGithub />
+        </a>
       </nav>
 
-      {/* ------------------ SOCIAL ICONS ------------------ */}
-      <div className="flex items-center space-x-3 bg-gray-100/90 px-3 rounded-full shadow-md backdrop-blur-sm border border-gray-200 h-12">
+      {/* ------------------ DESKTOP SOCIAL ICONS (UNCHANGED) ------------------ */}
+      <div className="hidden md:flex items-center space-x-3 bg-gray-100/90 px-3 rounded-full shadow-md backdrop-blur-sm border border-gray-200 h-12">
         {socials.map(({ href, icon, label }) => (
           <a
             key={href}
